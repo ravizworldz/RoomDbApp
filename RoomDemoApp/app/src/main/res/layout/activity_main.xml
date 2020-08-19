@@ -23,13 +23,21 @@
         app:layout_constraintTop_toBottomOf="@+id/nameInput"
         android:layout_marginStart="10dp"/>
 
+    <EditText android:id="@+id/phoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your phone number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailInput"
+        android:layout_marginStart="10dp"/>
+
     <Button android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInput"
+        app:layout_constraintTop_toBottomOf="@+id/phoneInput"
         />
 
     <androidx.recyclerview.widget.RecyclerView

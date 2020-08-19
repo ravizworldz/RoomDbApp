@@ -39,12 +39,16 @@ class RecyclerViewAdapter(val listener: RowClickListener): RecyclerView.Adapter<
 
         val tvName = view.tvName
         val tvEmail = view.tvEmail
+        val tvPhone = view.tvPhone
         val deleteUserID = view.deleteUserID
 
         fun bind(data: UserEntity) {
             tvName.text = data.name
 
             tvEmail.text = data.email
+
+
+            tvPhone.text = data.phone
 
             deleteUserID.setOnClickListener {
                 listener.onDeleteUserClickListener(data)

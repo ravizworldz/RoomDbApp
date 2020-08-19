@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.RowClickListener {
         saveButton.setOnClickListener {
             val name  = nameInput.text.toString()
             val email  = emailInput.text.toString()
-
+            val phone = phoneInput.text.toString()
             if(saveButton.text.equals("Save")) {
-                val user = UserEntity(0, name, email)
+                val user = UserEntity(0, name, email, phone)
                 viewModel.insertUserInfo(user)
             } else {
-                val user = UserEntity(nameInput.getTag(nameInput.id).toString().toInt(), name, email)
+                val user = UserEntity(nameInput.getTag(nameInput.id).toString().toInt(), name, email, phone)
                 viewModel.updateUserInfo(user)
                 saveButton.setText("Save")
             }
@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.RowClickListener {
     override fun onItemClickListener(user: UserEntity) {
         nameInput.setText(user.name)
         emailInput.setText(user.email)
+        phoneInput.setText(user.phone)
         nameInput.setTag(nameInput.id, user.id)
         saveButton.setText("Update")
     }
